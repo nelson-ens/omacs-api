@@ -2,7 +2,7 @@
   "openapi" : "3.0.1",
   "info" : {
     "title" : "OMACS-API",
-    "description" : "\tOMACS-API",
+    "description" : "OMACS-API",
     "version" : "0.0.0.4"
   },
   "servers" : [ {
