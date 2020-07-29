@@ -8,6 +8,22 @@
   "servers" : [ {
     "url" : "http://omacs-server.starz.com:1337"
   } ],
+  "tags" : [ {
+    "name" : "Plans",
+    "description" : "\tAnything to do with Plans"
+  }, {
+    "name" : "Offers",
+    "description" : "Anything to do with Offers"
+  }, {
+    "name" : "Stores",
+    "description" : "Anything to do with Stores"
+  }, {
+    "name" : "Users",
+    "description" : "Anything to do withi Users"
+  }, {
+    "name" : "Status",
+    "description" : "Anything to do with Status"
+  } ],
   "paths" : {
     "/api/offers/{offerCode}" : {
       "delete" : {
