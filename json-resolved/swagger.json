@@ -466,7 +466,7 @@
           "content" : {
             "application/json" : {
               "schema" : {
-                "$ref" : "#/components/schemas/body"
+                "$ref" : "#/components/schemas/UserLoginPayload"
               },
               "examples" : {
                 "0" : {
@@ -622,7 +622,7 @@
           }
         }
       },
-      "body" : {
+      "UserLoginPayload" : {
         "type" : "object",
         "properties" : {
           "password" : {
