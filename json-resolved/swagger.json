@@ -10,7 +10,7 @@
   } ],
   "tags" : [ {
     "name" : "Plans",
-    "description" : "\tAnything to do with Plans"
+    "description" : "Anything to do with Plans"
   }, {
     "name" : "Offers",
     "description" : "Anything to do with Offers"
@@ -25,20 +25,20 @@
     "description" : "Anything to do with Status"
   } ],
   "paths" : {
-    "/api/offers/{offerCode}" : {
-      "delete" : {
-        "tags" : [ "Offers" ],
+    "/api/plans" : {
+      "get" : {
+        "tags" : [ "Plans" ],
         "description" : "Auto generated using Swagger Inspector",
         "parameters" : [ {
-          "name" : "offerCode",
-          "in" : "path",
-          "description" : "ID of offer that needs to be deleted",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
+          "name" : "store",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
           "schema" : {
             "type" : "string"
-          }
+          },
+          "example" : "starz-web-us"
         } ],
         "responses" : {
           "200" : {
@@ -111,10 +111,21 @@
         "url" : "http://omacs-server.starz.com:1337"
       } ]
     },
-    "/api/stores" : {
-      "get" : {
-        "tags" : [ "Stores" ],
+    "/api/plans/{planCode}" : {
+      "delete" : {
+        "tags" : [ "Plans" ],
         "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "planCode",
+          "in" : "path",
+          "description" : "ID of plan that needs to be deleted",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
         "responses" : {
           "200" : {
             "description" : "Auto generated using Swagger Inspector",
@@ -164,39 +175,9 @@
         "url" : "http://omacs-server.starz.com:1337"
       } ]
     },
-    "/api/offers/nelsontest_zswibdjm" : {
+    "/api/offers/{offerCode}" : {
       "get" : {
         "tags" : [ "Offers" ],
-        "description" : "Auto generated using Swagger Inspector",
-        "responses" : {
-          "200" : {
-            "description" : "Auto generated using Swagger Inspector",
-            "content" : {
-              "application/json; charset=utf-8" : {
-                "schema" : {
-                  "type" : "string"
-                },
-                "examples" : { }
-              }
-            }
-          }
-        },
-        "servers" : [ {
-          "url" : "http://omacs-server.starz.com:1337"
-        } ]
-      },
-      "servers" : [ {
-        "url" : "http://omacs-server.starz.com:1337"
-      } ]
-    },
-    "/api/offer/save" : {
-      "servers" : [ {
-        "url" : "http://omacs-server.starz.com:1337"
-      } ]
-    },
-    "/api/plans" : {
-      "get" : {
-        "tags" : [ "Plans" ],
         "description" : "Auto generated using Swagger Inspector",
         "parameters" : [ {
           "name" : "store",
@@ -208,72 +189,33 @@
             "type" : "string"
           },
           "example" : "starz-web-us"
+        }, {
+          "name" : "offerCode",
+          "in" : "path",
+          "description" : "ID of offer that needs to be fetched",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
         } ],
         "responses" : {
           "200" : {
-            "description" : "Auto generated using Swagger Inspector",
-            "content" : {
-              "application/json; charset=utf-8" : {
-                "schema" : {
-                  "type" : "string"
-                },
-                "examples" : { }
-              }
-            }
+            "description" : "Auto generated using Swagger Inspector"
           }
         },
         "servers" : [ {
           "url" : "http://omacs-server.starz.com:1337"
         } ]
       },
-      "servers" : [ {
-        "url" : "http://omacs-server.starz.com:1337"
-      } ]
-    },
-    "/api/plans/{planCode}" : {
       "delete" : {
-        "tags" : [ "Plans" ],
-        "description" : "Auto generated using Swagger Inspector",
-        "parameters" : [ {
-          "name" : "planCode",
-          "in" : "path",
-          "description" : "ID of plan that needs to be deleted",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "string"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Auto generated using Swagger Inspector",
-            "content" : {
-              "application/json; charset=utf-8" : {
-                "schema" : {
-                  "type" : "string"
-                },
-                "examples" : { }
-              }
-            }
-          }
-        },
-        "servers" : [ {
-          "url" : "http://omacs-server.starz.com:1337"
-        } ]
-      },
-      "servers" : [ {
-        "url" : "http://omacs-server.starz.com:1337"
-      } ]
-    },
-    "/api/offers/{offerCode}/exportUniqueCouponCodes" : {
-      "get" : {
         "tags" : [ "Offers" ],
         "description" : "Auto generated using Swagger Inspector",
         "parameters" : [ {
           "name" : "offerCode",
           "in" : "path",
-          "description" : "ID of offer that needs to be fetched",
+          "description" : "ID of offer that needs to be deleted",
           "required" : true,
           "style" : "simple",
           "explode" : false,
@@ -281,67 +223,6 @@
             "type" : "string"
           }
         } ],
-        "responses" : {
-          "200" : {
-            "description" : "Auto generated using Swagger Inspector",
-            "content" : {
-              "text/csv" : {
-                "schema" : {
-                  "type" : "string"
-                },
-                "examples" : { }
-              }
-            }
-          }
-        },
-        "servers" : [ {
-          "url" : "http://omacs-server.starz.com:1337"
-        } ]
-      },
-      "servers" : [ {
-        "url" : "http://omacs-server.starz.com:1337"
-      } ]
-    },
-    "/api/offers/{offerCode}/publish" : {
-      "get" : {
-        "tags" : [ "Offers" ],
-        "description" : "Auto generated using Swagger Inspector",
-        "parameters" : [ {
-          "name" : "offerCode",
-          "in" : "path",
-          "description" : "ID of offer that needs to be fetched",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "string"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Auto generated using Swagger Inspector",
-            "content" : {
-              "application/json; charset=utf-8" : {
-                "schema" : {
-                  "type" : "string"
-                },
-                "examples" : { }
-              }
-            }
-          }
-        },
-        "servers" : [ {
-          "url" : "http://omacs-server.starz.com:1337"
-        } ]
-      },
-      "servers" : [ {
-        "url" : "http://omacs-server.starz.com:1337"
-      } ]
-    },
-    "/users/logout" : {
-      "get" : {
-        "tags" : [ "Users" ],
-        "description" : "Auto generated using Swagger Inspector",
         "responses" : {
           "200" : {
             "description" : "Auto generated using Swagger Inspector",
@@ -455,6 +336,103 @@
         "url" : "http://omacs-server.starz.com:1337"
       } ]
     },
+    "/api/offers/{offerCode}/exportUniqueCouponCodes" : {
+      "get" : {
+        "tags" : [ "Offers" ],
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "offerCode",
+          "in" : "path",
+          "description" : "ID of offer that needs to be fetched",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "text/csv" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://omacs-server.starz.com:1337"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "http://omacs-server.starz.com:1337"
+      } ]
+    },
+    "/api/offers/{offerCode}/publish" : {
+      "get" : {
+        "tags" : [ "Offers" ],
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "offerCode",
+          "in" : "path",
+          "description" : "ID of offer that needs to be fetched",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://omacs-server.starz.com:1337"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "http://omacs-server.starz.com:1337"
+      } ]
+    },
+    "/api/stores" : {
+      "get" : {
+        "tags" : [ "Stores" ],
+        "description" : "Auto generated using Swagger Inspector",
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://omacs-server.starz.com:1337"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "http://omacs-server.starz.com:1337"
+      } ]
+    },
     "/api/status" : {
       "get" : {
         "tags" : [ "Status" ],
@@ -498,6 +476,31 @@
             }
           }
         },
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://omacs-server.starz.com:1337"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "http://omacs-server.starz.com:1337"
+      } ]
+    },
+    "/users/logout" : {
+      "get" : {
+        "tags" : [ "Users" ],
+        "description" : "Auto generated using Swagger Inspector",
         "responses" : {
           "200" : {
             "description" : "Auto generated using Swagger Inspector",
