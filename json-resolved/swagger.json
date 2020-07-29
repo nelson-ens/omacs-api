@@ -80,7 +80,7 @@
           "content" : {
             "application/json" : {
               "schema" : {
-                "$ref" : "#/components/schemas/body"
+                "$ref" : "#/components/schemas/PlanRequestPayload"
               },
               "examples" : {
                 "0" : {
@@ -190,40 +190,6 @@
       } ]
     },
     "/api/offer/save" : {
-      "post" : {
-        "tags" : [ "Offers" ],
-        "description" : "Auto generated using Swagger Inspector",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/body_1"
-              },
-              "examples" : {
-                "0" : {
-                  "value" : "{\n  \"publishDate\": \"7/15/2020\",\n  \"publishTime\": \"12:00 AM\",\n  \"offerBusinessOwner\": \"Harriet Chambers\",\n  \"offerBodyText\": \"Nawgo ri hawad fehsekbe motnehci ki ek zedneb epajeno vuavu odpovah biwjojzak.\",\n  \"discountType\": \"fixed\",\n  \"offerAppliedBannerText\": \"Sizelohu wavetwe us fac nuvwem.\",\n  \"discountAmount\": 2.09,\n  \"endTime\": \"12:00 AM\",\n  \"discountDurationValue\": 1,\n  \"endDate\": \"8/20/2020\",\n  \"totalRedemptions\": 0,\n  \"offerHeader\": \"Umogonpu epeoc pin laic ra.\",\n  \"legalDisclaimer\": \"Ruwnob ededo zuj ozofe tovweror pe zad ror avdutu ficrikav buew hitrubwi eda na agi.\",\n  \"offerTypeId\": 2,\n  \"offerBgImageUrl\": \"https://starz.imgix.net/BuyStarz/special-offers/signup-addons/offer-background.jpg?auto=compress,format&w=2560&fit=max\",\n  \"discountDurationUnit\": \"months\",\n  \"planCode\": \"6months\",\n  \"offerCTA\": \"Ro vevrozu sa.\",\n  \"offerCodeType\": \"single_code\",\n  \"offerBoldedText\": \"Ufa dola gommu moh wih seir ar capafu asi wu loki si banusciz nessejih kal.\",\n  \"offerCode\": \"nelsontest_xxpriaav\",\n  \"welcomeEmailText\": \"Gijdoc nen pagenoj maghopoko mizpubo.\",\n  \"offerVanityUrl\": \"/vanity-url/goes-here\"\n}"
-                }
-              }
-            }
-          }
-        },
-        "responses" : {
-          "404" : {
-            "description" : "Auto generated using Swagger Inspector",
-            "content" : {
-              "application/json; charset=utf-8" : {
-                "schema" : {
-                  "type" : "string"
-                },
-                "examples" : { }
-              }
-            }
-          }
-        },
-        "servers" : [ {
-          "url" : "http://omacs-server.starz.com:1337"
-        } ]
-      },
       "servers" : [ {
         "url" : "http://omacs-server.starz.com:1337"
       } ]
@@ -405,7 +371,7 @@
           "content" : {
             "application/json" : {
               "schema" : {
-                "$ref" : "#/components/schemas/body_2"
+                "$ref" : "#/components/schemas/OfferRequestPayload"
               },
               "examples" : {
                 "0" : {
@@ -420,6 +386,17 @@
         },
         "responses" : {
           "201" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "404" : {
             "description" : "Auto generated using Swagger Inspector",
             "content" : {
               "application/json; charset=utf-8" : {
@@ -447,7 +424,7 @@
           "content" : {
             "application/json" : {
               "schema" : {
-                "$ref" : "#/components/schemas/body_3"
+                "$ref" : "#/components/schemas/OfferRequestPayload"
               },
               "examples" : {
                 "0" : {
@@ -511,7 +488,7 @@
           "content" : {
             "application/json" : {
               "schema" : {
-                "$ref" : "#/components/schemas/body_4"
+                "$ref" : "#/components/schemas/body"
               },
               "examples" : {
                 "0" : {
@@ -545,16 +522,7 @@
   },
   "components" : {
     "schemas" : {
-      "Schema" : {
-        "type" : "object",
-        "properties" : {
-          "id" : {
-            "type" : "integer",
-            "format" : "int64"
-          }
-        }
-      },
-      "body" : {
+      "PlanRequestPayload" : {
         "type" : "object",
         "properties" : {
           "billingCycleUnit" : {
@@ -577,7 +545,7 @@
           }
         }
       },
-      "body_1" : {
+      "OfferRequestPayload" : {
         "type" : "object",
         "properties" : {
           "publishTime" : {
@@ -651,155 +619,7 @@
           }
         }
       },
-      "body_2" : {
-        "type" : "object",
-        "properties" : {
-          "publishTime" : {
-            "type" : "string"
-          },
-          "offerBoldedText" : {
-            "type" : "string"
-          },
-          "offerCTA" : {
-            "type" : "string"
-          },
-          "endDate" : {
-            "type" : "string"
-          },
-          "publishDate" : {
-            "type" : "string"
-          },
-          "discountAmount" : {
-            "type" : "number"
-          },
-          "offerBodyText" : {
-            "type" : "string"
-          },
-          "offerCodeType" : {
-            "type" : "string"
-          },
-          "offerBgImageUrl" : {
-            "type" : "string"
-          },
-          "offerAppliedBannerText" : {
-            "type" : "string"
-          },
-          "discountDurationUnit" : {
-            "type" : "string"
-          },
-          "offerHeader" : {
-            "type" : "string"
-          },
-          "planCode" : {
-            "type" : "string"
-          },
-          "offerVanityUrl" : {
-            "type" : "string"
-          },
-          "offerTypeId" : {
-            "type" : "integer"
-          },
-          "offerCode" : {
-            "type" : "string"
-          },
-          "welcomeEmailText" : {
-            "type" : "string"
-          },
-          "offerBusinessOwner" : {
-            "type" : "string"
-          },
-          "discountType" : {
-            "type" : "string"
-          },
-          "endTime" : {
-            "type" : "string"
-          },
-          "discountDurationValue" : {
-            "type" : "integer"
-          },
-          "totalRedemptions" : {
-            "type" : "integer"
-          },
-          "legalDisclaimer" : {
-            "type" : "string"
-          }
-        }
-      },
-      "body_3" : {
-        "type" : "object",
-        "properties" : {
-          "publishTime" : {
-            "type" : "string"
-          },
-          "offerBoldedText" : {
-            "type" : "string"
-          },
-          "offerCTA" : {
-            "type" : "string"
-          },
-          "endDate" : {
-            "type" : "string"
-          },
-          "publishDate" : {
-            "type" : "string"
-          },
-          "discountAmount" : {
-            "type" : "number"
-          },
-          "offerBodyText" : {
-            "type" : "string"
-          },
-          "offerCodeType" : {
-            "type" : "string"
-          },
-          "offerBgImageUrl" : {
-            "type" : "string"
-          },
-          "offerAppliedBannerText" : {
-            "type" : "string"
-          },
-          "discountDurationUnit" : {
-            "type" : "string"
-          },
-          "offerHeader" : {
-            "type" : "string"
-          },
-          "planCode" : {
-            "type" : "string"
-          },
-          "offerVanityUrl" : {
-            "type" : "string"
-          },
-          "offerTypeId" : {
-            "type" : "integer"
-          },
-          "offerCode" : {
-            "type" : "string"
-          },
-          "welcomeEmailText" : {
-            "type" : "string"
-          },
-          "offerBusinessOwner" : {
-            "type" : "string"
-          },
-          "discountType" : {
-            "type" : "string"
-          },
-          "endTime" : {
-            "type" : "string"
-          },
-          "discountDurationValue" : {
-            "type" : "integer"
-          },
-          "totalRedemptions" : {
-            "type" : "integer"
-          },
-          "legalDisclaimer" : {
-            "type" : "string"
-          }
-        }
-      },
-      "body_4" : {
+      "body" : {
         "type" : "object",
         "properties" : {
           "password" : {
